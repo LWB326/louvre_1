@@ -74,7 +74,7 @@ class CommandeController extends Controller
 //		
         return $this->render('Commande/add.html.twig', array(
             'commande'=>$commande,
-            //'form' => $form->createView(),
+            'form'=>$form->createView(),
         ));
     }
 }

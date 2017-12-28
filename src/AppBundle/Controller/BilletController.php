@@ -42,7 +42,7 @@ class BilletController extends Controller
 
     // On indique les valeurs par defaut//aucune
         //aucune
-        //
+
 
 
     $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $billet);
@@ -53,6 +53,7 @@ class BilletController extends Controller
       ->add('paysVisiteur', TextType::class)
 	  ->add('tarifReduit',		ChoiceType::class, array('choices' => array('Non' => false,'Oui' => true,),))
 	  ->add('dateNaissanceVisiteur', DateType::class)
+
 
       ->add('save',      		SubmitType::class)
      ;

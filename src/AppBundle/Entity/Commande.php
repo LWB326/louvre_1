@@ -25,18 +25,25 @@ class Commande
      */
     private $id;
 
-    // liaison bi-directionnelle, une commande est liée à plusieurs billets
+    // liaison bi-directionnelle, commande est du côté inverse : une commande est liée à plusieurs billets
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Billet", mappedBy="commande")
-     *
-     * @Assert\Valid
      *
      */
     private $billets;
 
 
 
+    /**
+     * toString
+     * @return string
+     */
+  /*  public function __toString()
+    {
+        return $this;
+    }
 
+*/
     /**
      * @var \DateTime
      *
