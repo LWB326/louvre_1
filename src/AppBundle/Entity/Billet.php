@@ -25,7 +25,7 @@ class Billet
      private $id;
 
 
-    //liaison bi-directionnelle, plusieurs billets correspondent à une commande
+    //liaison bi-directionnelle, plusieurs billets correspondent à une commande modif pou verif1
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Commande", inversedBy="billets")
