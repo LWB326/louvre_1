@@ -25,13 +25,13 @@ class Billet
      private $id;
 
 
-    //liaison bi-directionnelle, plusieurs billets correspondent à une commande
+    //liaison bi-directionnelle, billet est propriétaire : plusieurs billets correspondent à une commande
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Commande", inversedBy="billets")
      * @ORM\JoinColumn(name="commande_Id", referencedColumnName="id", nullable=false)
      */
-     private $commande;
+     private $commandes;
 
 
 
@@ -290,5 +290,29 @@ class Billet
     public function getDateVisite()
     {
         return $this->dateVisite;
+    }
+
+    /**
+     * Set commandes
+     *
+     * @param \AppBundle\Entity\Commande $commandes
+     *
+     * @return Billet
+     */
+    public function setCommandes(\AppBundle\Entity\Commande $commandes)
+    {
+        $this->commandes = $commandes;
+
+        return $this;
+    }
+
+    /**
+     * Get commandes
+     *
+     * @return \AppBundle\Entity\Commande
+     */
+    public function getCommandes()
+    {
+        return $this->commandes;
     }
 }

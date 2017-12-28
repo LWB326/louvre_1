@@ -291,4 +291,28 @@ class Billet
     {
         return $this->dateVisite;
     }
+
+    /**
+     * Set commandes
+     *
+     * @param \AppBundle\Entity\Commande $commandes
+     *
+     * @return Billet
+     */
+    public function setCommandes(\AppBundle\Entity\Commande $commandes)
+    {
+        $this->commandes = $commandes;
+
+        return $this;
+    }
+
+    /**
+     * Get commandes
+     *
+     * @return \AppBundle\Entity\Commande
+     */
+    public function getCommandes()
+    {
+        return $this->commandes;
+    }
 }
