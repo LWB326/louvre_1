@@ -1,0 +1,15 @@
+{# src/AppBundle/Resources/views/billet/view.html.twig #}
+
+{% extends "AppBundle:Resources:views:layout.html.twig" %}
+
+{% block title %}
+  Affichage d'un billet
+{% endblock %}
+
+{% block body_body %}
+
+  <h2>{{ billet.visitorName }}</h2>
+
+  //<i>Par {{ billet.visitorName }}, le {{ billet.visitorName }}</i>
+
+{% endblock %}

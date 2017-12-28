@@ -1,3 +1,4 @@
+# app/config/config.yml
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
@@ -36,7 +37,9 @@ framework:
 # Twig Configuration
 twig:
     debug: '%kernel.debug%'
-    strict_variables: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'	
+    form_themes:
+        - 'form_table_layout.html.twig'
 
 # Doctrine Configuration
 doctrine:
