@@ -72,19 +72,7 @@ class Commande
      */
     private $prenomClient;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="urlClient", type="string", length=255)
-     */
-    private $urlClient;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="refCommande", type="string", length=255, nullable=true)
-     */
-    private $refCommande;
 
     /**
      * Constructor
@@ -200,53 +188,9 @@ class Commande
         return $this->prenomClient;
     }
 
-    /**
-     * Set urlClient
-     *
-     * @param string $urlClient
-     *
-     * @return Commande
-     */
-    public function setUrlClient($urlClient)
-    {
-        $this->urlClient = $urlClient;
 
-        return $this;
-    }
 
-    /**
-     * Get urlClient
-     *
-     * @return string
-     */
-    public function getUrlClient()
-    {
-        return $this->urlClient;
-    }
 
-    /**
-     * Set refCommande
-     *
-     * @param string $refCommande
-     *
-     * @return Commande
-     */
-    public function setRefCommande($refCommande)
-    {
-        $this->refCommande = $refCommande;
-
-        return $this;
-    }
-
-    /**
-     * Get refCommande
-     *
-     * @return string
-     */
-    public function getRefCommande()
-    {
-        return $this->refCommande;
-    }
 
     /**
      * Add billet

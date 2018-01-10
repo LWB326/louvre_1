@@ -20,8 +20,7 @@ class CommandeType extends AbstractType
             ->add('demieJournee')
             ->add('nomClient')
             ->add('prenomClient')
-            ->add('urlClient')
-            ->add('refCommande')
+
             ->add('billets', CollectionType::class, array(
                  'entry_type'   => BilletType::class,
                  'allow_add'    => true,

@@ -19,9 +19,9 @@ class BilletType extends AbstractType
             ->add('prenomDuVisiteur')
             ->add('tarifReduit')
             ->add('dateNaissanceVisiteur')
-            ->add('prixBillet')
+            //->add('prixBillet')
             ->add('paysVisiteur')
-            ->add('dateVisite')
+            //->add('dateVisite')
             ->add('save',      SubmitType::class);
     }
     
