@@ -188,53 +188,9 @@ class Commande
         return $this->prenomClient;
     }
 
-    /**
-     * Set urlClient
-     *
-     * @param string $urlClient
-     *
-     * @return Commande
-     */
-    public function setUrlClient($urlClient)
-    {
-        $this->urlClient = $urlClient;
 
-        return $this;
-    }
 
-    /**
-     * Get urlClient
-     *
-     * @return string
-     */
-    public function getUrlClient()
-    {
-        return $this->urlClient;
-    }
 
-    /**
-     * Set refCommande
-     *
-     * @param string $refCommande
-     *
-     * @return Commande
-     */
-    public function setRefCommande($refCommande)
-    {
-        $this->refCommande = $refCommande;
-
-        return $this;
-    }
-
-    /**
-     * Get refCommande
-     *
-     * @return string
-     */
-    public function getRefCommande()
-    {
-        return $this->refCommande;
-    }
 
     /**
      * Add billet
