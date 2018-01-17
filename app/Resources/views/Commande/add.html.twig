@@ -3,7 +3,6 @@
 
 <h3>Formulaire de saisie d'une commande pour la visite</h3>
 
-
 <div class="well">
     {{ form(form) }}
 
@@ -13,84 +12,74 @@
 </div>
 
 {# On charge la bibliothèque jQuery. Ici, je la prends depuis le CDN google
-
-mais si vous l'avez en local, changez simplement l'adresse. #}
-
+   mais si vous l'avez en local, changez simplement l'adresse. #}
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-
 {# Voici le script en question : #}
-
 <script type="text/javascript">
-
     $(document).ready(function() {
         // On récupère la balise <div> en question qui contient l'attribut « data-prototype » qui nous intéresse.
-        var $container = $('div#appbundle_commande_billets');
-
+    var $container = $('div#appbundle_commande_billets');
 
         // On définit un compteur unique pour nommer les champs qu'on va ajouter dynamiquement
-        var index = $container.find(':input').length;
+    var index = $container.find(':input').length;
 
         // On ajoute un nouveau champ à chaque clic sur le lien d'ajout.
-        $('#add_billet').click(function(e) {
-            addBillet($container);
-            e.preventDefault(); // évite qu'un # apparaisse dans l'URL
-            return false;
-        });
+    $('#add_billet').click(function(e) {
+    addbillet($container);
 
-        // On ajoute un premier champ automatiquement s'il n'en existe pas déjà un (cas d'une nouvelle annonce par exemple).
-        if (index == 0) {
-            addBillet ($container);
-        } else {
-            // S'il existe déjà des billets, on ajoute un lien de suppression pour chacun d'entre eux
-            $container.children('div').each(function() {
+    e.preventDefault(); // évite qu'un # apparaisse dans l'URL
+    return false;
+    });
 
-                addDeleteLink($(this));
-
-            });
-        }
+    // On ajoute un premier champ automatiquement s'il n'en existe pas déjà un (cas d'une nouvelle annonce par exemple).
+    if (index == 0) {
+    addBillet($container);
+    } else {
+    // S'il existe déjà des billets, on ajoute un lien de suppression pour chacun d'entre eux
+    $container.children('div').each(function() {
+    addDeleteLink($(this));
+    });
+    }
 
         // La fonction qui ajoute un formulaire BilletType
-        function addBillet($container) {
+    function addBillet($container) {
             // Dans le contenu de l'attribut « data-prototype », on remplace :
             // - le texte "__name__label__" qu'il contient par le label du champ
             // - le texte "__name__" qu'il contient par le numéro du champ
-            var template = $container.attr('data-prototype')
-                .replace(/Billet/g, 'Billet n°' + (index+1))
-                .replace(/1/g,        index)
-            ;
+    var template = $container.attr('data-prototype')
+    .replace(/Billet/g, 'Billet n°' + (index+1))
+    .replace(/1/g,        index)
+    ;
 
             // On crée un objet jquery qui contient ce template
-            var $prototype = $(template);
+     var $prototype = $(template);
 
             // On ajoute au prototype un lien pour pouvoir supprimer le billet
-            addDeleteLink($prototype);
+     addDeleteLink($prototype);
 
             // On ajoute le prototype modifié à la fin de la balise <div>
-            $container.append($prototype);
+     $container.append($prototype);
 
             // Enfin, on incrémente le compteur pour que le prochain ajout se fasse avec un autre numéro
-            index++;
-        }
+     index++;
+     }
 
         // La fonction qui ajoute un lien de suppression d'un billet
-
-        function addDeleteLink($prototype) {
+     function addDeleteLink($prototype) {
             // Création du lien
-            var $deleteLink = $('<a href="#" class="btn btn-danger">Supprimer</a>');
+     var $deleteLink = $('<a href="#" class="btn btn-danger">Supprimer</a>');
 
             // Ajout du lien
-            $prototype.append($deleteLink);
+     $prototype.append($deleteLink);
 
             // Ajout du listener sur le clic du lien pour effectivement supprimer le billet
-            $deleteLink.click(function(e) {
-                $prototype.remove();
+     $deleteLink.click(function(e) {
+     $prototype.remove();
 
-                e.preventDefault(); // évite qu'un # apparaisse dans l'URL
-                return false;
-
-            });
-        }
+     e.preventDefault(); // évite qu'un # apparaisse dans l'URL
+     return false;
+     });
+     }
     });
-
 </script>
